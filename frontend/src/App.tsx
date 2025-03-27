@@ -9,8 +9,23 @@ import { AuthLayout } from '@/layouts/AuthLayout';
 
 // Pages
 import { Dashboard } from '@/pages/Dashboard';
+import { Students } from '@/pages/Students';
+import { Courses } from '@/pages/Courses';
+import { Settings } from '@/pages/Settings';
+import { Finance } from '@/pages/Finance';
+import { HR } from '@/pages/HR';
+import { Assessment } from '@/pages/Assessment';
 import { Login } from '@/pages/auth/Login';
 import { NotFound } from '@/pages/NotFound';
+
+// New Pages
+import { Analytics } from '@/pages/Analytics';
+import { Programs } from '@/pages/Programs';
+import { Schools } from '@/pages/Schools';
+import { Technology } from '@/pages/Technology';
+import { Facilities } from '@/pages/Facilities';
+import { Transportation } from '@/pages/Transportation';
+import { FoodServices } from '@/pages/FoodServices';
 
 // Protected Route Component
 import { ProtectedRoute } from '@/components/auth/ProtectedRoute';
@@ -38,7 +53,29 @@ function App() {
           <Route element={<ProtectedRoute />}>
             <Route element={<MainLayout />}>
               <Route path="/" element={<Dashboard />} />
-              {/* Add more protected routes here */}
+              
+              {/* Academic Routes */}
+              <Route path="/students" element={<Students />} />
+              <Route path="/courses" element={<Courses />} />
+              <Route path="/assessment" element={<Assessment />} />
+              <Route path="/programs" element={<Programs />} />
+              
+              {/* Administration Routes */}
+              <Route path="/finance" element={<Finance />} />
+              <Route path="/hr" element={<HR />} />
+              
+              {/* Analytics */}
+              <Route path="/analytics" element={<Analytics />} />
+              
+              {/* Operations Routes */}
+              <Route path="/schools" element={<Schools />} />
+              <Route path="/technology" element={<Technology />} />
+              <Route path="/facilities" element={<Facilities />} />
+              <Route path="/transportation" element={<Transportation />} />
+              <Route path="/food-services" element={<FoodServices />} />
+              
+              {/* Settings */}
+              <Route path="/settings" element={<Settings />} />
             </Route>
           </Route>
 
